@@ -1,0 +1,44 @@
+name:                orphne
+version:             1.0.0.0
+author:              "tak3shi"
+copyright:           "2019 George Khoroshilov"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README file.
+
+dependencies:
+- base >= 4.7 && < 5
+- gloss
+
+library:
+  source-dirs: src
+
+executables:
+  orphne:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - orphne
+    - gloss
+
+tests:
+  orphne-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -Wall
+    - -Werror
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - orphne
+    - gloss
